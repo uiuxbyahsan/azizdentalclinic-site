@@ -1,0 +1,263 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  /* Smilifye-inspired brand palette */
+  --color-cream: var(--cream);
+  --color-light-teal: var(--light-teal);
+  --color-brand: var(--brand);
+  --color-brand-deep: var(--brand-deep);
+  --color-teal: var(--teal);
+  --color-ink: var(--ink);
+  --color-body: var(--body);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --container-site: 1280px;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque", "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Aziz Dental Clinic — premium dental brand system (Smilifye reference).
+ *  Primary Dark   #0D2E2E   navbar / CTA / footer
+ *  Accent Teal    #2E9E9E   heading accent / hover / pills
+ *  Cream Warm     #FAF6F1   page background / FAQ
+ *  Light Teal     #E6F4F4   team section / stat cards
+ *  Text Dark      #111827   headings
+ *  Text Body      #4B5563   paragraphs
+ *  White          #FFFFFF   cards / navbar
+ */
+
+:root {
+  --radius: 1.5rem; /* 24px */
+
+  --background: #faf6f1; /* warm cream */
+  --foreground: #111827; /* text dark */
+
+  --card: #ffffff;
+  --card-foreground: #111827;
+
+  --popover: #ffffff;
+  --popover-foreground: #111827;
+
+  --primary: #0d2e2e; /* primary dark */
+  --primary-foreground: #ffffff;
+
+  --secondary: #e6f4f4; /* light teal */
+  --secondary-foreground: #0d2e2e;
+
+  --muted: #e6f4f4;
+  --muted-foreground: #4b5563; /* text body */
+
+  --accent: #2e9e9e; /* accent teal */
+  --accent-foreground: #ffffff;
+
+  /* Brand semantic tokens */
+  --cream: #faf6f1;
+  --light-teal: #e6f4f4;
+  --brand: #0d2e2e;
+  --brand-deep: #082020;
+  --teal: #2e9e9e;
+  --ink: #111827;
+  --body: #4b5563;
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(13, 46, 46, 0.1);
+  --input: rgba(13, 46, 46, 0.12);
+  --ring: #2e9e9e;
+
+  --sidebar: #faf6f1;
+  --sidebar-foreground: #111827;
+  --sidebar-primary: #0d2e2e;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e6f4f4;
+  --sidebar-accent-foreground: #0d2e2e;
+  --sidebar-border: rgba(13, 46, 46, 0.1);
+  --sidebar-ring: #2e9e9e;
+
+  /* Gradients & shadows */
+  --gradient-dark: linear-gradient(135deg, #0d2e2e 0%, #082020 100%);
+  --gradient-hero: linear-gradient(
+    180deg,
+    rgba(13, 46, 46, 0.35) 0%,
+    rgba(13, 46, 46, 0.55) 45%,
+    rgba(8, 32, 32, 0.92) 100%
+  );
+  --gradient-teal: linear-gradient(135deg, #2e9e9e 0%, #0d2e2e 100%);
+  --shadow-soft: 0 12px 40px rgba(13, 46, 46, 0.06);
+  --shadow-elegant: 0 18px 55px rgba(13, 46, 46, 0.1);
+  --shadow-glow: 0 10px 40px -18px rgba(46, 158, 158, 0.5);
+  --shadow-nav: 0 14px 44px rgba(13, 46, 46, 0.1);
+}
+
+.dark {
+  --background: #0b2323;
+  --foreground: #f4faf9;
+  --card: #103030;
+  --card-foreground: #f4faf9;
+  --popover: #103030;
+  --popover-foreground: #f4faf9;
+  --primary: #2e9e9e;
+  --primary-foreground: #06201f;
+  --secondary: #143838;
+  --secondary-foreground: #f4faf9;
+  --muted: #143838;
+  --muted-foreground: #9cc0bd;
+  --accent: #2e9e9e;
+  --accent-foreground: #06201f;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #2e9e9e;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  h1 {
+    font-weight: 700;
+  }
+  h2 {
+    font-weight: 600;
+  }
+  h3 {
+    font-weight: 600;
+  }
+
+  body {
+    font-weight: 400;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .container-site {
+    max-width: var(--container-site);
+  }
+
+  .display-xl {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .display-lg {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 4.4vw, 3.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.025em;
+  }
+
+  .text-teal {
+    color: var(--teal);
+  }
+  .bg-gradient-dark {
+    background: var(--gradient-dark);
+  }
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  .bg-gradient-teal {
+    background: var(--gradient-teal);
+  }
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  .shadow-nav {
+    box-shadow: var(--shadow-nav);
+  }
+
+  /* Hide scrollbars on horizontal scroll rows while keeping scroll */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card-premium {
+    border: 1px solid rgba(13, 46, 46, 0.06);
+    box-shadow: 0 12px 40px rgba(13, 46, 46, 0.06);
+    transition:
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .card-premium:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 55px rgba(13, 46, 46, 0.12);
+  }
+}
